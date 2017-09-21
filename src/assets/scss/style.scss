@@ -1,0 +1,186 @@
+html, body, .container {
+	min-height: 100%;
+	background: lightgrey;
+}
+
+.container {
+	max-width: 400px;
+}
+#app {
+	min-height: 100%;
+}
+
+.normalize-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+a {
+	color: black;
+	text-decoration: none;
+}
+.success {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: limegreen;
+	overflow: hidden;
+	transition: 0.3s;
+	color: white;
+	height: 0;
+}
+.show {
+	height: 40px !important;
+}
+
+.main-wrap {
+	padding: 20px 0;
+	transition: 0.3s;
+	opacity: 0;
+
+	.list-wrap {
+
+
+		.list {
+			@extend .normalize-list;
+
+			.item {
+				background: white;
+				margin-bottom: 10px;
+				padding: 10px;
+				border-radius: 5px;
+
+				.unit-descr {
+					margin-bottom: 10px;
+				}
+				.unit-descr > span {
+					font-weight: 700;
+
+					&:first-child {
+						color: grey;
+					}
+				}
+
+				.btn {
+					border: 1px solid lightgrey;
+					cursor: pointer;
+					float: right;
+					transition: 0.1s;
+
+					&:active {
+						border-color: black;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+.change-wrap {
+	padding: 20px 0;
+	border-radius: 5px;
+	transition: 0.3s;
+	opacity: 0;
+
+	form {
+		padding: 20px;
+		font-weight: 700;
+		background: white;
+
+		.add-delete-name {
+			position: relative;
+
+			.unit-names {
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+
+				span {
+					transition: 0.2s;
+					cursor: pointer;
+
+					&:hover {
+						background: red;
+						color: white;
+					}
+				}
+
+				input {
+					padding-right: 30px;
+				}
+			}
+
+			i {
+				position: absolute;
+				bottom: 11px;
+				right: 1px;
+				font-size: 20px;
+				padding: 4px 15px;
+				cursor: pointer;
+				transition: 0.3s;
+
+				&:hover {
+					background: limegreen;
+					color: white;
+				}
+			}
+		}
+
+		.change-gender-wrap {
+			input {
+				width: auto;
+				margin: 0;
+			}
+		}
+
+		input {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		.btn {
+			background: transparent;
+			border: 1px solid lightgrey;
+			outline: none;
+			cursor: pointer;
+			float: right;
+
+			&:active {
+				border-color: black;
+				outline: none !important;
+			}
+			&:focus {
+				box-shadow: none;
+				outline: none !important;
+			}
+		}
+		.btn-back-to-index {
+			float: left;
+		}
+		.btn-delete-item {
+			margin-right: 10px;
+			&:hover {
+				background: red;
+				color: white;
+				border-color: transparent;
+			}
+		}
+		.btn-save-changes {
+			&:hover {
+				background: limegreen;
+				color: white;
+				border-color: transparent;
+			}
+		}
+	}
+}
+
+@media (max-width: 320px) {
+	.change-wrap {
+		.btn {
+			width: 100% !important;
+			margin-right: 0 !important;
+			margin-bottom: 10px;
+		}
+	}
+}
