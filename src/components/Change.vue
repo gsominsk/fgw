@@ -80,8 +80,10 @@
 			},
 			deleteName: function (name) {
 				for (var i in this.hero.aliases)
-					if (this.hero.aliases[i] == name)
+					if (this.hero.aliases[i] == name) {
 						this.hero.aliases.splice(i, 1);
+						break ;
+					}
 			},
 			setName: function () {
 				var name = document.querySelectorAll('input[name=addNewName]')[0].value;
